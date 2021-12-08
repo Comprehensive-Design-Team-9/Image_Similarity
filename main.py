@@ -12,6 +12,7 @@ img_path_list = []
 all_img_list = []
 similarity_stack = []
 post_sm_cost = []
+sum_sm_data = []
 
 if __name__ == "__main__":
     print("Run")
@@ -38,8 +39,10 @@ if __name__ == "__main__":
             for k in all_img_list:
                 sm_data = knn_match.knn_match_fun(q, k)
                 similarity_stack.append(sm_data)
-        data_load_save.save_similarity_csv([p, f"{sum(similarity_stack)-1/len(similarity_stack)-1}"], save_csv_path)
-        similarity_stack.clear()
+            sum_sm_data.append(sum(similarity_stack))
+            similarity_stack.clear()
+        data_load_save.save_similarity_csv([p, f"{sum(sum_sm_data)-1/len(sum_sm_data)-1}"], save_csv_path)
+        sum_sm_data.clear()
         print(time.time()-start/60)
 
     print("Finish", time.time()-start/60)

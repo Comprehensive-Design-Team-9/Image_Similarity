@@ -3,7 +3,6 @@
 
 import cv2
 import numpy as np
-from sympy import solve
 
 # image1 = cv2.imread('./data/test_images/SE-8d001dac-f7a0-4699-b59c-d26f49b3abc5.jpeg')
 # imge2 = cv2.imread('./data/images/SE-07b4562c-5779-4530-8d52-3f7dfb37f002.jpeg')
